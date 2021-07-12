@@ -1,0 +1,40 @@
+Apache Spark és una plataforma de codi obert orientat
+a l'analítica i processat de dades massives. Ofereix 
+una interfície per a treballar amb clústers tot considerant 
+el paral·lelisme de dades i la tolerància a fallades de 
+forma implícita. Originàriament desenvolupat per la 
+Universitat de Califòrnia a Berkeley el 2009, el codi 
+font fou cedit el 2013 a l'Apache Software Foundation, 
+qui el manté des de llavors.[1][2][3]
+L'arquitectura d'Apache Spark està basada en el concepte de RDD (Resilient Distributed Dataset), un conjunt de dades immutable distribuït al voltant d'un clúster.[4] Sobre aquesta idea fonamental, es van anar creant capes d'abstracció per a facilitar les tasques de programació i control, utilitzant per exemple el concepte de dataset (joc de dades). Així doncs, com a API es recomana la interfície orientada a datasets des de la versió Spark 2.x[5] malgrat que la orientada a RDD segueix existint.[6][7]
+
+El concepte de RDD neix com a contraposició al paradigma MapReduce, una
+estratègia per lidiar amb grans volums de dades consistent a llegir dades
+del disc, mapejar-les seguint una funció, reduir-ne els resultats obtinguts i
+emmagatzemar-los de nou al disc. Malgrat l'enfocament és molt adient (i 
+àmpliament utilitzat) per a multitud de contextos, n'hi ha d'altres en que 
+mostra limitacions, com ara quan prima la velocitat de processament o quan el 
+processat és iteratiu (es processa el mateix conjunt una vegada i una altra). En 
+comptes d'emmagatzemar cada resultat al disc, els RDDs es guarden en memòria 
+compartida, la qual cosa n'optimitza l'accés i disponibilitat.[8]
+
+
+Els escenaris en que el tractament amb RDDs són beneficiosos, ha donat lloc a 
+nous avantatges i ha permès millorar en el tractament de certs problemes. Són 
+casos ideals per a treballar amb Spark: l'anàlisi exploratori d'un conjunt de 
+dades, les consultes estil SQL o els processos d'aprenentatge automàtic, fent ús
+de la capacitat iterativa de càlcul.[9][10]
+
+
+Apache Spark necessitarà en qualsevol cas coordinar-se amb el clúster de 
+maquinari sobre el que treballi. Per a aquesta finalitat, Spark suporta Hadoop 
+YARN, Apache Mesos or Kubernetes,[11] així com una versió pròpia o standalone 
+que sol usar-se per a fer proves.[12]
+
+
+També necessitarà poder emmagatzemar dades de forma distribuïda. En aquest cas, 
+podria integrar-se amb gairebé qualsevol de les solucions actualment disponibles 
+al mercat, incloent Hadoop Distributed File System (HDFS)[13] o Cassandra.[14] 
+Igual que en el cas del gestor, per a escenaris preliminars de proves, existeix 
+una versió senzilla que no necessita cap complement; simplement un entorn local 
+que simularia el clúster.
